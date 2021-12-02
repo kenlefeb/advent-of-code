@@ -27,10 +27,10 @@ with open(INPUT_FILE) as input:
         previous = None
 
         for line in input:
-            line = line.strip()
-            print(f'Processing line: {line}')
-            result, previous = process_line(line, previous)
-            output.write(f'{line} ({result})\n')
+            current = int(line.strip())
+            print(f'Processing line: {current}')
+            result, previous = process_line(current, previous)
+            output.write(f'{current} ({result})\n')
             totals[result] += 1
 
         print(f'Finished writing to {OUTPUT_FILE}')
